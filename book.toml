@@ -1,0 +1,6 @@
+[book]
+authors = ["Benjamin Bannier"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Introduction to Spicy"

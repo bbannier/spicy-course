@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import json
+import sys
+
+import mistletoe
+from mistletoe.block_token import CodeFence
+from mistletoe.markdown_renderer import MarkdownRenderer
+
+RENDERER = MarkdownRenderer()
+
+
+def fenced_code_blocks(md: str) -> str:
+    doc = mistletoe.Document(md)
+
+    for c in doc.children:
+        if not isinstance(c, CodeFence):
+            continue
+
+        HIGHLIGHT_LANG = 'ruby'
+        # Use `HIGHLIGHT_LANG` highlighter for `spicy` code blocks.
+        c.info_string = c.info_string.replace('spicy', HIGHLIGHT_LANG)
+        c.language = HIGHLIGHT_LANG  # Redundant, but consistent.
+
+    return RENDERER.render(doc)
+
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == 'supports':
+        # sys.argv[2] is the renderer name
+        sys.exit(0)
+
+context, book = json.load(sys.stdin)
+
+for section in book['sections']:
+    section['Chapter']['content'] = fenced_code_blocks(
+        section['Chapter']['content'])
+
+json.dump(book, sys.stdout)

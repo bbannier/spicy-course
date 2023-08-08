@@ -17,6 +17,9 @@ def fenced_code_blocks(md: str) -> str:
         if not isinstance(c, CodeFence):
             continue
 
+        if c.language != 'spicy':
+            continue
+
         HIGHLIGHT_LANG = 'ruby'
         # Use `HIGHLIGHT_LANG` highlighter for `spicy` code blocks.
         c.info_string = c.info_string.replace('spicy', HIGHLIGHT_LANG)

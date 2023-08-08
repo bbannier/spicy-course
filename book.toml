@@ -9,4 +9,4 @@ title = "Introduction to Spicy"
 command = "python3 scripts/mdbook-spicy-code"
 
 [output.html.code.hidelines]
-spicy = "!"
+ruby = "###"

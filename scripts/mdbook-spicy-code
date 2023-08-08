@@ -1,29 +1,51 @@
 #!/usr/bin/env python3
 
 import json
+import subprocess
 import sys
+from tempfile import NamedTemporaryFile
 
 import mistletoe
-from mistletoe.block_token import CodeFence
+from mistletoe.block_token import BlockCode, CodeFence
 from mistletoe.markdown_renderer import MarkdownRenderer
 
 RENDERER = MarkdownRenderer()
 
 
+def run_spicy(code: str) -> str:
+    with NamedTemporaryFile(suffix='.spicy') as f:
+        f.write(code.encode())
+        f.flush()
+
+        try:
+            return subprocess.check_output(f'spicyc -dj {f.file.name}', shell=True, stderr=subprocess.STDOUT).decode()
+        except subprocess.CalledProcessError as e:
+            return e.output.decode()
+
+
 def fenced_code_blocks(md: str) -> str:
     doc = mistletoe.Document(md)
 
-    for c in doc.children:
+    for i, c in enumerate(doc.children):
         if not isinstance(c, CodeFence):
             continue
 
-        if c.language != 'spicy':
+        if not c.language.count('spicy'):
             continue
 
-        HIGHLIGHT_LANG = 'ruby'
         # Use `HIGHLIGHT_LANG` highlighter for `spicy` code blocks.
+        HIGHLIGHT_LANG = 'ruby'
         c.info_string = c.info_string.replace('spicy', HIGHLIGHT_LANG)
         c.language = HIGHLIGHT_LANG  # Redundant, but consistent.
+
+        if False:
+            # Execute runable blocks.
+            if c.info_string.count('run'):
+                # Unhide all code.
+                code = '\n'.join(
+                    map(lambda x: x.removeprefix('###'), c.content.splitlines()))
+
+                doc.children.insert(i+1, BlockCode(run_spicy(code)))
 
     return RENDERER.render(doc)
 

@@ -3,10 +3,10 @@ authors = ["Benjamin Bannier"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Introduction to Spicy"
+title = "The Spicy Book"
 
-[preprocessor.spicy-code]
-command = "python3 scripts/mdbook-spicy-code"
+# [preprocessor.spicy-code]
+# command = "python3 scripts/mdbook-spicy-code"
 
 [output.html.code.hidelines]
 ruby = "###"

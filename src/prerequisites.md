@@ -16,9 +16,9 @@ In addition we require:
 A simplified approach for experimentation is to use the [Zeek playground
 repository](https://github.com/bbannier/zeek-playground) which offers an
 environment integrated with [Visual Studio
-Code](https://code.visualstudio.com). Either clone to project and open it in
-Visual Studio Code and install the recommended plugins, or open it directly in
-a Github Codespace.
+Code](https://code.visualstudio.com). Either clone the project and open it
+locally in Visual Studio Code and install the recommended plugins, or open it
+directly in a Github Codespace from the Github repository view.
 
 To install Spicy development dependencies execute the following commands:
 

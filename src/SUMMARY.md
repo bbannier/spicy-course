@@ -1,8 +1,8 @@
 # Summary
 
 - [Goals of this book](./goals.md)
-- [Spicy motivation]()
 - [Prerequisites](./prerequisites.md)
+- [Spicy motivation]()
 - [Spicy language]()
 - [Testing]()
 - [Spicy patterns]()

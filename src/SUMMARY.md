@@ -2,7 +2,7 @@
 
 - [Goals of this book](./goals.md)
 - [Prerequisites](./prerequisites.md)
-- [Spicy motivation]()
+- [Why Spicy?](./why_spicy.md)
 - [Spicy language]()
 - [Testing]()
 - [Spicy patterns]()

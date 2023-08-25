@@ -1,6 +1,6 @@
 # Chapter 1
 
-```spicy
+```ruby
 ###Lines starting with `###` are hidden in the output.
 global x = 10;
 public type X = unit {
@@ -8,7 +8,7 @@ public type X = unit {
 };
 ```
 
-```spicy,run
+```ruby,run
 ###module foo;
 print 42;
 print b"\x00";

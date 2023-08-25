@@ -1,5 +1,5 @@
 [book]
-authors = ["Benjamin Bannier"]
+authors = ["The Zeek developers"]
 language = "en"
 multilingual = false
 src = "src"
@@ -9,4 +9,8 @@ title = "The Spicy Book"
 # command = "python3 scripts/mdbook-spicy-code"
 
 [output.html.code.hidelines]
+spicy = "###"
 ruby = "###"
+
+[output.linkcheck]
+follow-web-links = true

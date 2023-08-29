@@ -20,9 +20,9 @@ Code](https://code.visualstudio.com). Either clone the project and open it
 locally in Visual Studio Code and install the recommended plugins, or open it
 directly in a Github Codespace from the Github repository view.
 
-To install Spicy development dependencies execute the following commands:
+To install Spicy plugin development dependencies execute the following commands:
 
 ```console
 apt-get update
-apt-get install -y g++ cmake libpcap-dev
+apt-get install -y cmake
 ```

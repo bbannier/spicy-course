@@ -1,40 +1,53 @@
 # Why Spicy?
 
-Historically adding new parsers to Zeek required writing C++ code which was
-error-prone and a significant barrier to entry.
+Historically extending Zeek with new parsers required writing C++ code which
+was a significant barrier to entry for domain experts.
 
-```bob
+Spicy is a _domain-specific language_ for developing parsers for network protocols
+or file formats which integrates well with Zeek.
 
-.-----.
-|asdas|----+->
-'-----'    |___
+## Flexible multi-paradigm language
 
+With Spicy parsers can be
+expressed in _declaratively_ in a format close to specifications, e.g., the
+following TFTP `ERROR` message
 
-
-Spicy --> HILTI --> "C++" --> HLTO
+```
+#  2 bytes     2 bytes      string    1 byte
+#  -----------------------------------------
+# | Opcode |  ErrorCode |   ErrMsg   |   0  |
+#  -----------------------------------------
 ```
 
-```bob
-    0       3
-     *-------*      +y
-  1 /|    2 /|       ^
-   *-------* |       |
-   | |4    | |7      | ◄╮
-   | *-----|-*     ⤹ +-----> +x
-   |/      |/       / ⤴
-   *-------*       v
-  5       6      +z
+can [be expressed in
+Spicy](https://docs.zeek.org/projects/spicy/en/latest/tutorial/index.html) as
+
+```spicy
+type Error = unit {
+    code: uint16;
+    msg:  bytes &until=b"\x00";
+};
 ```
 
-```admonish tip
-My example is the best!
+Spicy supports procedual code which can be
+[hooked](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#unit-hooks)
+into parsing to support more complex parsing scenarios.
+
+```spicy
+function sum(a: uint64, b: uint64): uint64 { return a + b; }
+
+type Fold = unit {
+    a: uint8;
+    b: uint8 &convert=sum(self.a, $$);
+    c: uint8 &convert=sum(self.b, $$);
+};
 ```
 
-```markdown
-{{#include SUMMARY.md}}
-```
+## Built-in safety
 
-```console
-$ bat SUMMARY.md 1 2 -f
-<!-- cmdrun bat SUMMARY.md -->
-```
+Spicy code is executed safely so many common errors are rejected, e.g.,
+
+- integer under- or overflows
+- iterator validity
+- unhandled switch cases
+

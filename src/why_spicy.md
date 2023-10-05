@@ -51,3 +51,7 @@ Spicy code is executed safely so many common errors are rejected, e.g.,
 - iterator validity
 - unhandled switch cases
 
+## Integration into Zeek
+
+Spicy parsers can trigger events in Zeek. Parse results can transparently be
+made available to Zeek script code.

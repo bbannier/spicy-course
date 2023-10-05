@@ -19,7 +19,11 @@ ruby = "###"
 follow-web-links = true
 
 [preprocessor.cmdrun]
-[preprocessor.svgbob]
+# [preprocessor.svgbob]
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "2.0.2" # do not edit: managed by `mdbook-admonish install`
+
+[preprocessor.plantuml]
+plantuml-cmd="plantuml"
+use-data-uris=true

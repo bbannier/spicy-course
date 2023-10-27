@@ -7,6 +7,7 @@
   - [Hello world](./hello_world.md)
   - [Basic types](./basic_types.md)
     - [Boolean and integers](./bool_integers.md)
+    - [Bytes and strings](./bytes_strings.md)
     - [Exercises](./basic_types_exercises.md)
   - [Loops and conditionals]()
 - [Testing]()

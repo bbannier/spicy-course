@@ -21,10 +21,10 @@ Spicy provides types for e.g.,
 
 - integers, booleans
 - bytes, string
-- tuples, containers
-- enums, structs
-- network address, time, interval
+- containers
+- enums, tuples, structs
+- special purpose types for e.g., network address, timestamps, or time durations
 
 See the
-[documentation](https://docs.zeek.org/projects/spicy/en/latest/programming/language/types.html).
-for the full list of supported types.
+[documentation](https://docs.zeek.org/projects/spicy/en/latest/programming/language/types.html)
+for the full list of supported types and their API.

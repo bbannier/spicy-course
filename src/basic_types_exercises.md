@@ -1,4 +1,4 @@
-# Excercises
+# Exercises
 
 - What happens at compile time if you try to create a `uint8` a value outside
   of its range, e.g., `uint8(-1)` or `uint8(1024)`?

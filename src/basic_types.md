@@ -11,7 +11,7 @@ global N1 = 0;        # Inferred as uint64.
 global N2: uint8 = 0; # Explicitly typed.
 
 # Types required in signatures, here: `uint64` -> `void`
-function foo(arg: int64) { 
+function foo(arg: int64) {
     local dec = -1; # Inferred as int64.
     print arg + inc;
 }

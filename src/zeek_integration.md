@@ -3,6 +3,7 @@
 TODO(bbannier)
 
 A diagram in UTF-8 text format (inlined automatically) foo
+
 ```plantuml,format=png
 @startuml
 
@@ -38,4 +39,3 @@ end note
 @enduml
 
 ```
-

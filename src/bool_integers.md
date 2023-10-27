@@ -20,7 +20,7 @@ Spicy supports both signed and unsigned integers with withs of 8, 16, 32 and 64 
 - `int8`, `int16`, `int32`, `int64`
 
 Integers are checked at both compile and runtime against overflows. They are
-either statically rejected or trigger runtime expections.
+either statically rejected or trigger runtime exceptions.
 
 Integer literals without sign like e.g., `4711` default to `uint64`; if a sign
 is given `int64` is used, e.g., `-47`, `+12`.

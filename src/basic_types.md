@@ -21,7 +21,7 @@ Spicy provides types for e.g.,
 
 - integers, booleans
 - bytes, string
-- containers
+- collections
 - enums, tuples, structs
 - special purpose types for e.g., network address, timestamps, or time durations
 

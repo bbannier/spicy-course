@@ -20,7 +20,8 @@ Code](https://code.visualstudio.com). Either clone the project and open it
 locally in Visual Studio Code and install the recommended plugins, or open it
 directly in a Github Codespace from the Github repository view.
 
-To install Spicy plugin development dependencies execute the following commands:
+To install Spicy plugin development dependencies in the playground environment
+execute the following commands:
 
 ```console
 apt-get update

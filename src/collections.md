@@ -1,3 +1,3 @@
 # Collections
 
-TODO(bbannier): 
+TODO(bbannier):

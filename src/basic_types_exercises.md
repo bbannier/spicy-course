@@ -45,3 +45,5 @@
    ```
 
 1. Can you dereference a collection's `end` iterator?
+
+1. What happens at runtime if you dereference an unset `optional`?

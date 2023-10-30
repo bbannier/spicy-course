@@ -1,5 +1,33 @@
 # Collections
 
+## Tuples
+
+[Tuples](https://docs.zeek.org/projects/spicy/en/latest/programming/language/types.html#tuple)
+are heterogenous collections of values. Tuple values are immutable.
+
+```spicy
+global xs = (1, "a", b"c");
+global ys = tuple(1, "a", b"c");
+global zs: tuple<uint64, string, bytes> = (1, "a", b"c");
+print xs, ys, zs;
+```
+
+Individual tuple elements can be access with subscript syntax.
+
+```spicy
+print (1, "a", b"c")[1];  # Prints "a".
+```
+
+Optionally individual tuple elements can be named, e.g.,
+
+```spicy
+global xs: tuple<first: uint8, second: string> = (1, "a");
+assert xs[0] == xs.first;
+assert xs[1] == xs.second;
+```
+
+## Containers
+
 Spicy provides data structures for lists
 ([`vector`](https://docs.zeek.org/projects/spicy/en/latest/programming/language/types.html#vector)),
 and associative containers

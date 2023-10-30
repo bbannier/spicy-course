@@ -18,6 +18,16 @@
    print 4711/0;
    ```
 
+1. What happens at compile time if you access a non-existing tuple element, e.g.,
+
+   ```spicy
+   global xs = tuple(1, "a", b"c");
+   print xs[4711];
+
+   global xs: tuple<first: uint8, second: string> = (1, "a");
+   print xs.third;
+   ```
+
 1. What happens at runtime if you try to get a non-existing `vector` element, e.g.,
 
    ```spicy
@@ -34,4 +44,4 @@
    print *it;
    ```
 
-1. Can you dereference a collections `end` iterator?
+1. Can you dereference a collection's `end` iterator?

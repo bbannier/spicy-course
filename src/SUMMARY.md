@@ -9,6 +9,7 @@
     - [Boolean and integers](./bool_integers.md)
     - [Bytes and strings](./bytes_strings.md)
     - [Collections](./collections.md)
+    - [Enums and structs](./enums_structs.md)
     - [Exercises](./basic_types_exercises.md)
   - [Loops and conditionals]()
 - [Testing]()

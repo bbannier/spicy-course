@@ -8,8 +8,8 @@ title = "The Spicy Book"
 [output.html]
 additional-css = ["./src/css/mdbook-admonish.css", "./mdbook-admonish.css"]
 
-# [preprocessor.spicy-code]
-# command = "python3 scripts/mdbook-spicy-code"
+[preprocessor.spicy-code]
+command = "python3 scripts/mdbook-spicy-code"
 
 [output.html.code.hidelines]
 spicy = "###"

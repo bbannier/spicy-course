@@ -20,3 +20,11 @@ global my_other_string = my_bytes.decode(); # Default: UTF-8.
 
 print my_bytes, my_string, my_other_string;
 ```
+
+`bytes` can be iterated over.
+
+```spicy
+for (byte in b"abc") {
+    print byte;
+}
+```

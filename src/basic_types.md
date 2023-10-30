@@ -20,6 +20,7 @@ function foo(arg: int64) {
 Spicy provides types for e.g.,
 
 - integers, booleans
+- optional
 - bytes, string
 - tuples and containers
 - enums, structs

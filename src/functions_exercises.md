@@ -12,7 +12,7 @@
 
    For testing you can `assert fib(8) == 21;`.
 
-2. Add memoization to your `fib` function. For that change its signature to
+1. Add memoization to your `fib` function. For that change its signature to
 
    ```spicy
    function fib(n: uint64, inout cache: map<uint64, uint64>): uint64 { ... }
@@ -27,4 +27,4 @@
 
    For testing you can `assert fib(64, m_fib) == 10610209857723;`.
 
-1. Try wrapping your `fib` functions so users do not have to provide the cache themself.
+1. Try modifying your `fib` functions so users do not have to provide the cache themself.

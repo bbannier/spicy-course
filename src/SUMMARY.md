@@ -13,6 +13,9 @@
     - [Enums and structs](./enums_structs.md)
     - [Exercises](./basic_types_exercises.md)
   - [Conditionals and loops](./conditionals_loops.md)
+  - [Functions](./functions.md)
+    - [Exercises](./functions_exercises.md)
+  - [Modules revisited]()
 - [Testing]()
 - [Spicy patterns]()
 - [Error recovery]()
@@ -21,3 +24,4 @@
 - [Zeek integration](./zeek_integration.md)
 
     TODO(bbannier): vielleicht gopher also example protokol?
+    TODO(bbannier): type aliases

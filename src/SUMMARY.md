@@ -12,7 +12,7 @@
     - [Collections](./collections.md)
     - [Enums and structs](./enums_structs.md)
     - [Exercises](./basic_types_exercises.md)
-  - [Loops and conditionals](./loops_conditionals.md)
+  - [Conditionals and loops](./conditionals_loops.md)
 - [Testing]()
 - [Spicy patterns]()
 - [Error recovery]()

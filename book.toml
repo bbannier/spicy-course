@@ -3,7 +3,7 @@ authors = ["The Zeek developers"]
 language = "en"
 multilingual = false
 src = "src"
-title = "The Spicy Book"
+title = "Introduction to Spicy"
 
 [output.html]
 additional-css = ["./src/css/mdbook-admonish.css", "./mdbook-admonish.css"]

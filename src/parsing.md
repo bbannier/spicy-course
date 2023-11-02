@@ -31,12 +31,12 @@ parsing it prints the `unit`.
 
 Another driver is
 [`spicy-driver`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-driver)
-which just does not print the unit. Zeek also includes a dediced driver for
+which just does not print the unit. Zeek includes its own dedicated driver for
 Spicy parsers.
 
-## Differences to `struct`
+The major differences to `struct` are:
 
-While code generated for a `unit` is in many ways similar to the one generated for a `struct` it differs in crucial aspects:
-
-- by default all `unit` fields are `&optional`, i.e., a `unit` value can have any or all fields unset,
-- entry points for parsing are generated.
+- `unit` fields need to have a [parseable
+  type](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#parsing-types),
+- by default all `unit` fields are `&optional`, i.e., a `unit` value can have
+  any or all fields unset.

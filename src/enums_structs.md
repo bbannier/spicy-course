@@ -1,4 +1,4 @@
-# Enums and structs
+# User-defined types
 
 Enums and structs are user-defined data types which allow to give data a
 semantic meaning.

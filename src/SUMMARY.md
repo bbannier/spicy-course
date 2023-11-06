@@ -18,6 +18,7 @@
     - [Exercises](./functions_exercises.md)
   - [Modules revisited](./modules_revisited.md)
 - [Parsing](./parsing.md)
+  - [Structure of a parser](./parser_structure.md)
   - [Parsing types](./parsing_types.md)
   - [Hooks](./hooks.md)
 - [Testing]()

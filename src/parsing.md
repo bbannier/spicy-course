@@ -12,26 +12,32 @@ module foo;
 
 public type Foo = unit {
     version: uint32;
+
+    on %done { print "The version is %s." % self.version; }
 };
 ```
+
+- The parser for `Foo` consists of a single parser which extracts an `uint32`
+  with the default network byte order.
+- The extracted `uint32` is bound to a named field to store its value in the unit.
+- We added a [unit
+  hook](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#unit-hooks)
+  which runs when the parser is done.
 
 We can run that parser by using a driver which feeds it input (potentially incrementally).
 
 ```console
-$ printf '\x00\x00\x00\xFF' | spicy-dump -d hello.spicy
-foo::Foo {
-  version: 255
-}
+$ printf '\x00\x00\x00\xFF' | spicy-driver -d hello.spicy
+The version is 255.
 ```
 
-Here we use
-[`spicy-dump`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-dump)
-as a driver. It reads input from its stdin and feeds it to the parser. After
-parsing it prints the `unit`.
+We use
+[`spicy-driver`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-driver)
+as driver. It reads input from its stdin and feeds it to the parser, and executes hooks.
 
 Another driver is
-[`spicy-driver`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-driver)
-which just does not print the unit. Zeek includes its own dedicated driver for
+[`spicy-dump`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-dump)
+which prints the unit after parsing. Zeek includes its own dedicated driver for
 Spicy parsers.
 
 The major differences to `struct` are:

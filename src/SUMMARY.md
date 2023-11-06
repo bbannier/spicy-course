@@ -21,6 +21,7 @@
   - [Structure of a parser](./parser_structure.md)
   - [Parsing types](./parsing_types.md)
   - [TODO: Adding additional state]()
+  - [TODO: Lookahead parsing]()
   - [Hooks](./hooks.md)
 - [Testing]()
 - [Spicy patterns]()

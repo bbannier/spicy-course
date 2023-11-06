@@ -20,6 +20,7 @@
 - [Parsing](./parsing.md)
   - [Structure of a parser](./parser_structure.md)
   - [Parsing types](./parsing_types.md)
+  - [TODO: Adding additional state]()
   - [Hooks](./hooks.md)
 - [Testing]()
 - [Spicy patterns]()
@@ -29,4 +30,5 @@
 - [Zeek integration](./zeek_integration.md)
 
     TODO(bbannier): vielleicht gopher also example protokol?
+
     TODO(bbannier): type aliases

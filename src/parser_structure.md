@@ -1,6 +1,7 @@
 # Structure of a parser
 
-A parser contains a potentially empty ordered list of subparsers which are invoked in order.
+A parser contains a potentially empty ordered list of subparsers which are
+invoked in order.
 
 ```spicy
 type Version = unit {
@@ -48,7 +49,8 @@ public type Version = unit {
 
 We can hook into parsing via [unit or field hooks](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#unit-hooks).
 
-In hooks we can refer to the current unit via `self`, and the current field via `$$`. We can declare multiple hooks for the same field/unit.
+In hooks we can refer to the current unit via `self`, and the current field via
+`$$`. We can declare multiple hooks for the same field/unit.
 
 ```spicy
 public type X = unit {
@@ -82,11 +84,16 @@ import spicy;
 
 # This unit uses big byte order.
 type X = unit {
-    a: uint8;                                      # Use default byte order (big).
-    b: uint8 &byte-order=spicy::ByteOrder::Little; # Use little byte order for this field.
+    # Use default byte order (big).
+    a: uint8;
+
+    # Use little byte order for this field.
+    b: uint8 &byte-order=spicy::ByteOrder::Little;
 } &byte-order=spicy::ByteOrder::Big;
 ```
 
 <!-- * * * -->
 
-Often parsing requires examining input and dynamically choosing a matching parser. Spicy models this with lookahead parsing which is explained in a later chapter.
+Often parsing requires examining input and dynamically choosing a matching
+parseq. Spicy models this with lookahead parsing which is explained in a later
+chapter.

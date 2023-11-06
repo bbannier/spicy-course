@@ -49,8 +49,10 @@ switch (flag) {
 
 In contrast to its behavior in e.g., C, in Spicy
 
-- there is no fall-through in `switch`, i.e., there is an implicit `break` after each `case`,
-- `switch` cases are not restricted to literal integer values; they can contain any expression,
+- there is no fall-through in `switch`, i.e., there is an implicit `break`
+  after each `case`,
+- `switch` cases are not restricted to literal integer values; they can contain
+  any expression,
 - if no matching `case` or `default` is found, a runtime error is raised.
 
 ## Loops

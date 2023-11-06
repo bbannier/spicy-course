@@ -1,6 +1,7 @@
 # Parsing types
 
-Spicy parsers are build up from smaller parsers, at the lowest level from basic types present in the input.
+Spicy parsers are build up from smaller parsers, at the lowest level from basic
+types present in the input.
 
 Currently Spicy [supports parsing for the following basic
 types](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#parsing-types):
@@ -31,7 +32,9 @@ type X = unit {
 };
 ```
 
-If the number of elements is not known we can parse until the end of the input data. This will trigger a parse error if the input does not contain enough data to parse all elements.
+If the number of elements is not known we can parse until the end of the input
+data. This will trigger a parse error if the input does not contain enough data
+to parse all elements.
 
 ```spicy
 type X = unit {
@@ -50,7 +53,8 @@ type X = unit {
 };
 ```
 
-If the terminator is in the domain of the list elements we can also use the `&until` attribute.
+If the terminator is in the domain of the list elements we can also use the
+`&until` attribute.
 
 ```spicy
 type X = unit {
@@ -58,7 +62,8 @@ type X = unit {
 };
 ```
 
-If the list elements require attributes themself, we can pass them by grouping them with the element type.
+If the list elements require attributes themself, we can pass them by grouping
+them with the element type.
 
 ```spicy
 type X = unit {

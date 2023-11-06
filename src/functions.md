@@ -10,7 +10,8 @@ function make_string(x: uint8): string {
 }
 ```
 
-Functions without return value can either be written without return type, or returning `void`.
+Functions without return value can either be written without return type, or
+returning `void`.
 
 ```spicy
 function nothing1() {}

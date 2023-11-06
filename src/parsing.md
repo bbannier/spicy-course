@@ -33,7 +33,8 @@ The version is 255.
 
 We use
 [`spicy-driver`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-driver)
-as driver. It reads input from its stdin and feeds it to the parser, and executes hooks.
+as driver. It reads input from its stdin and feeds it to the parser, and
+executes hooks.
 
 Another driver is
 [`spicy-dump`](https://docs.zeek.org/projects/spicy/en/latest/toolchain.html#spicy-dump)

@@ -2,7 +2,8 @@
 
 Variables in Spicy can either be declared at or _local_ or module (_global_) scope.
 
-Local variables live in bodies of e.g., [functions](./functions.md). They are declared with the `local` storage qualifier and always mutable.
+Local variables live in bodies of e.g., [functions](./functions.md). They are
+declared with the `local` storage qualifier and always mutable.
 
 ```spicy
 function hello(name: string) {
@@ -11,7 +12,8 @@ function hello(name: string) {
 }
 ```
 
-Global variables live at module scope. If declared with `global` they are mutable, or immutable if declared with `const`.
+Global variables live at module scope. If declared with `global` they are
+mutable, or immutable if declared with `const`.
 
 ```spicy
 module foo;

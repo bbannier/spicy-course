@@ -12,7 +12,7 @@ With Spicy parsers can be
 expressed in _declaratively_ in a format close to specifications, e.g., the
 following TFTP `ERROR` message
 
-```
+```plain
 #  2 bytes     2 bytes      string    1 byte
 #  -----------------------------------------
 # | Opcode |  ErrorCode |   ErrMsg   |   0  |

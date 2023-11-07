@@ -78,7 +78,7 @@ Assuming the following simplified CSV format:
 
 - rows are separated by newlines `b"\n"`
 - individual columns are separated by `b","`
-- there are not separators anywhere else (e.g., no `","` in quoted column values)
+- there are not separators anywhere else (e.g., no `,` in quoted column values)
 
 A sample input would be
 

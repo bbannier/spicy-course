@@ -89,7 +89,7 @@ A sample input would be
 ```
 
 For testing you can use the `-f` flag to `spicy-dump` or `spicy-driver` to read
-input from a file, e.g.,
+input from a file instead of stdin, e.g.,
 
 ```console
 spicy-driver csv_naive.spicy -f input.csv

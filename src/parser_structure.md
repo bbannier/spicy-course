@@ -11,9 +11,12 @@ type Version = unit {
 };
 ```
 
-<!-- * * * -->
+## Attributes
 
 Behavior of individual subparsers or units can be controlled with attributes.
+See the [documentation of the concrete
+types](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#parsing-types)
+for the supported attributes.
 
 ```spicy
 type Version = unit {
@@ -23,7 +26,7 @@ type Version = unit {
 } &convert="v%s.%s.%s" % (self.major, self.minor, self.patch);
 ```
 
-<!-- * * * -->
+## Extracting data without storing it
 
 If one needs to extracted some data but does not need it one can declare an
 anonymous field (without name) to avoid storing it. With `>=spicy-1.9.0`
@@ -45,7 +48,7 @@ public type Version = unit {
 };
 ```
 
-<!-- * * * -->
+## Hooks
 
 We can hook into parsing via [unit or field hooks](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#unit-hooks).
 
@@ -64,7 +67,7 @@ on X::x {
 }
 ```
 
-<!-- * * * -->
+## Controlling byte order
 
 The used [byte
 order](https://docs.zeek.org/projects/spicy/en/latest/programming/library.html#types)
@@ -91,8 +94,6 @@ type X = unit {
     b: uint8 &byte-order=spicy::ByteOrder::Little;
 } &byte-order=spicy::ByteOrder::Big;
 ```
-
-<!-- * * * -->
 
 Often parsing requires examining input and dynamically choosing a matching
 parseq. Spicy models this with lookahead parsing which is explained in a later

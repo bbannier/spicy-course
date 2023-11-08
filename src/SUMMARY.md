@@ -23,7 +23,7 @@
   - [Exercise: A naive CSV parser](./parsing_exercise_naive_csv.md)
   - [Adding additional parser state](./parser_additional_state.md)
   - [Lookahead parsing](./parsing_lookahead.md)
-  - [TODO: Error recovery]()
+  - [Error recovery](./error_recovery.md)
   - [Hooks](./hooks.md)
 - [Testing]()
 - [Spicy patterns]()

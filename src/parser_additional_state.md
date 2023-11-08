@@ -27,6 +27,11 @@ type X = unit {
 By unit variables are initialized with the default value of the type, e.g., for
 a `uint8` with `0`.
 
+```admonish info
+If you want to capture whether a unit variable (or any other variable) was set,
+use a variable of `optional` type instead of a dummy value.
+```
+
 To use with a different value, assign the variable in the unit's `%init` hook,
 e.g.,
 

@@ -22,7 +22,7 @@
   - [Parsing types](./parsing_types.md)
   - [Exercise: A naive CSV parser](./parsing_exercise_naive_csv.md)
   - [Adding additional parser state](./parser_additional_state.md)
-  - [TODO: Lookahead parsing]()
+  - [Lookahead parsing](./parsing_lookahead.md)
   - [Hooks](./hooks.md)
   - [Error recovery]()
 - [Testing]()

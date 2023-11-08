@@ -20,6 +20,7 @@
 - [Parsing](./parsing.md)
   - [Structure of a parser](./parser_structure.md)
   - [Parsing types](./parsing_types.md)
+  - [Exercise: A naive CSV parser](./parsing_exercise_naive_csv.md)
   - [TODO: Lookahead parsing]()
   - [TODO: Adding additional state]()
   - [Hooks](./hooks.md)

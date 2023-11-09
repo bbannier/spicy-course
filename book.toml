@@ -19,7 +19,7 @@ ruby = "###"
 [output.linkcheck]
 follow-web-links = true
 
-[preprocessor.cmdrun]
+# [preprocessor.cmdrun]
 # [preprocessor.svgbob]
 [preprocessor.admonish]
 command = "mdbook-admonish"

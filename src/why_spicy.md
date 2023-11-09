@@ -48,7 +48,7 @@ type Fold = unit {
 Spicy code is executed safely so many common errors are rejected, e.g.,
 
 - integer under- or overflows
-- iterator validity
+- incorrect use of iterators
 - unhandled switch cases
 
 ## Integration into Zeek

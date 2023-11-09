@@ -13,14 +13,14 @@ def set_lang_spicy(data):
 
     elif isinstance(data, dict):
         for k, v in data.items():
-            if k == 'content':
-                data[k] = v.replace('```spicy\n', f'```{REPLACEMENT_LANG}\n')
+            if k == "content":
+                data[k] = v.replace("```spicy\n", f"```{REPLACEMENT_LANG}\n")
             elif isinstance(data, dict):
                 set_lang_spicy(v)
 
 
 if len(sys.argv) > 1:
-    if sys.argv[1] == 'supports':
+    if sys.argv[1] == "supports":
         # sys.argv[2] is the renderer name
         sys.exit(0)
 

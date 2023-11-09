@@ -38,7 +38,7 @@ of _all data_ differ between TCP and UDP parsers:
 
 - **UDP** has no connection concept so Zeek synthesizes UDP "connections" from flows by
   grouping UDP messages with the same
-  [4-tuple](https://docs.zeek.org/en/master/scripts/base/init-bare.zeek.html#type-conn_id)
+  [5-tuple](https://docs.zeek.org/en/master/scripts/base/init-bare.zeek.html#type-conn_id)
   in a time window. UDP has no reassembly, so a new parser instance is
   created for each UDP packet; `&eod` means _until the end of the current
   packet_.

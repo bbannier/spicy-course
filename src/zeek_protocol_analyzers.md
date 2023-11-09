@@ -70,7 +70,7 @@ type Request = unit {
 
 ```mermaid
 flowchart TD
-    N(fa:fa-cloud-download network) -->|data| Z((Zeek))
+    N((fa:fa-cloud)) -->|data| Z(Zeek)
     Z -->|looks up| Reg[Analyzers registered for port]
     Z --> |forwards for matching| dpd[Analyzers with matching signatures]
 

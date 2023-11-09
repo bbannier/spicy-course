@@ -3,6 +3,8 @@
 import json
 import sys
 
+REPLACEMENT_LANG = "ruby"
+
 
 def set_lang_spicy(data):
     if isinstance(data, list):
@@ -12,7 +14,7 @@ def set_lang_spicy(data):
     elif isinstance(data, dict):
         for k, v in data.items():
             if k == 'content':
-                data[k] = v.replace('```spicy\n', '```ruby\n')
+                data[k] = v.replace('```spicy\n', f'```{REPLACEMENT_LANG}\n')
             elif isinstance(data, dict):
                 set_lang_spicy(v)
 

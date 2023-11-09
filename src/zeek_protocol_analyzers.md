@@ -38,14 +38,14 @@ We have used `&eod` to denote that we want to extract _all data_. The semantics 
 - **UDP** has no connection concept so Zeek synthesizes UDP "connections" by
   grouping UDP messages with the same
   [4-tuple](https://docs.zeek.org/en/master/scripts/base/init-bare.zeek.html#type-conn_id)
-  in a time window. UDP has no reassembly, so new parser instance is
+  in a time window. UDP has no reassembly, so a new parser instance is
   created for each UDP packet; `&eod` means _until the end of the current
   packet_.
 - **TCP**: TCP supports connections and packet reassembly, so both sides of a
   connection are modelled as streams with reassembled data; `&eod` means _until
   the end of the stream_. The stream is _unbounded_.
 
-For this reason we want to model parsing of a TCP connection as a list of
+For this reason one usually wants to model parsing of a TCP connection as a list of
 protocol messages, e.g.,
 
 ```spicy
@@ -63,4 +63,4 @@ type Request = unit {
   field](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#anonymous-fields)
   for the list
 - parsing of the protocol messages is responsible for detecting when a message
-  stops
+  ends

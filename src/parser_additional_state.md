@@ -70,8 +70,8 @@ type X = unit {
 };
 ```
 
-By unit variables are initialized with the default value of the type, e.g., for
-a `uint8` with `0`.
+By default unit variables are initialized with the default value of the type,
+e.g., for a `uint8` with `0`.
 
 ```admonish info
 If you want to capture whether a unit variable (or any other variable) was set,

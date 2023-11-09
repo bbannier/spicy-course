@@ -6,7 +6,8 @@ other the following is provided:
 
 - [automatic
   generation](https://docs.zeek.org/en/master/devel/spicy/reference.html#interface-definitions-evt-files)
-  of Zeek analyzers from Spicy parsers
+  of Zeek analyzers from Spicy parsers from [interface definition (EVT)
+  files](https://docs.zeek.org/en/master/devel/spicy/reference.html#interface-definitions-evt-files)
 - ability to trigger [Zeek
   events](https://docs.zeek.org/en/master/scripting/basics.html) from
   [Spicy](https://docs.zeek.org/projects/spicy/en/latest/programming/parsing.html#unit-hooks)
@@ -21,21 +22,47 @@ other the following is provided:
 ## Getting started
 
 The recommended approach to integrate a Spicy parser with Zeek is to use the
-[default Zeek package manager template](https://github.com/zeek/package-template/).
+[default Zeek package template](https://github.com/zeek/package-template/).
 
-We can create Zeek packet, protocol or file analyzers by selecting the appropriate template feature, e.g., to create a new Zeek package for a protocol analyzer,
+We can create Zeek packet, protocol or file analyzers by selecting the
+appropriate template feature. E.g., to create a new Zeek package for a protocol
+analyzer and interactively provide required user variables,
 
 ```console
 zkg create --packagedir my_analyzer --features spicy-protocol-analyzer
 ```
 
-```admonish info
+```admonish warning
 `zkg` uses Git to track package information. When running in a VM, this can
-cause issues if the package is in a mounted directory. If you run into this
-trying creating the package in directory which is not mounted from the host.
+cause issues if the package repository is in a mounted directory. If you run
+into this trying creating the package in directory which is not mounted from the
+host.
 ```
 
-Use `zkg template info` to show the available features.
+```admonish example
+Use the template to create a Spicy protocol analyzer for analyzing TCP traffic
+now to follow along with later examples.
+
+This will create a protocol analyzer from the template. Items which need to be
+updated are marked `TODO`. It will generate e.g.,
+
+- `zkg.meta`: package metadata describing the package and setting up building and testing
+- `analyzer/`
+    - `*.evt`: interface definition for exposing Spicy parser as Zeek analyzer
+    - `*.spicy`: Spicy grammar of the parser
+    - `zeek_*.spicy`: Zeek-specific Spicy code
+- `scripts/`
+    - `main.zeek`: Zeek code for interacting with the analyzer
+    - `dpd.sig`:
+      [Signatures](https://docs.zeek.org/en/master/frameworks/signatures.html) for
+      dynamic protocol detection (DPD)
+- `testing/tests`: [BTest](https://github.com/zeek/btest#readme) test cases
+
+```
+
+<details>
+
+We can show available template features with `zkg template info`.
 
 ```console
 $ zkg template info
@@ -55,3 +82,5 @@ user vars:
     license: one of apache, bsd-2, bsd-3, mit, mpl-2, no default, used by license
 versions: v0.99.0, v1.0.0, v2.0.0, v3.0.0, v3.0.1, v3.0.2
 ```
+
+</details>

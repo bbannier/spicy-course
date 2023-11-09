@@ -29,15 +29,15 @@ for (byte in b"abc") {
 }
 ```
 
-Use the [former operator
+Use the [format operator
 `%`](https://docs.zeek.org/projects/spicy/en/latest/programming/language/types.html#operator-string::Modulo)
-to compute a string representation of Spicy values. Format strings follow the
+to compute a string representation of Spicy values. Format strings roughly follow the
 [POSIX format string
 API](https://pubs.opengroup.org/onlinepubs/9699919799/functions/strftime.html).
 
 ```spicy
 global n = 4711;
-global s =  "%d" % n;
+global s = "%d" % n;
 ```
 
 The format operator can also be used to format multiple values.

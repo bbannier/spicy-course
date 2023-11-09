@@ -88,11 +88,10 @@ flowchart TD
     AV(fa:fa-bell analyzer_violation)
     style AV fill:red
 
-    B2 -->|calls| C(confirm)
-    C -->|triggers| AC
+    B2 -->|triggers| AC
 
-    A2 -->|calls| AV
-    B1 -->|calls| AV
+    A2 -->|triggers| AV
+    B1 -->|triggers| AV
 ```
 
 To integrate the parser into this the template generated the following stub implementations in `analyzer/zeek_*.spicy`:

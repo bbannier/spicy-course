@@ -25,3 +25,5 @@ repos:
   rev: v1.16.23
   hooks:
   - id: typos
+
+exclude: src\/[css|js]

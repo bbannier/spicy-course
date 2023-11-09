@@ -17,7 +17,7 @@ for the originator (client) and responder (server) side of the connection,
     parse with foo::Messages;
 ```
 
-## Message semantics: UDP vs. TCP
+## Message and connection semantics: UDP vs. TCP
 
 The parsers have these stub implementations:
 
@@ -33,9 +33,10 @@ public type Response = unit {
 };
 ```
 
-We have used `&eod` to denote that we want to extract _all data_. The semantics of _all data_ differ between TCP and UDP parsers:
+We have used `&eod` to denote that we want to extract _all data_. The semantics
+of _all data_ differ between TCP and UDP parsers:
 
-- **UDP** has no connection concept so Zeek synthesizes UDP "connections" by
+- **UDP** has no connection concept so Zeek synthesizes UDP "connections" from flows by
   grouping UDP messages with the same
   [4-tuple](https://docs.zeek.org/en/master/scripts/base/init-bare.zeek.html#type-conn_id)
   in a time window. UDP has no reassembly, so a new parser instance is
@@ -64,3 +65,55 @@ type Request = unit {
   for the list
 - parsing of the protocol messages is responsible for detecting when a message
   ends
+
+## Analyzer lifecycle
+
+```mermaid
+flowchart TD
+    N(fa:fa-cloud-download network) -->|data| Z((Zeek))
+    Z -->|looks up| Reg[Analyzers registered for port]
+    Z --> |forwards for matching| dpd[Analyzers with matching signatures]
+
+    Reg -->|data| A1
+    Reg --> |data|A2
+    Reg --> |data|AN[...]
+
+    dpd -->|data| B1
+    dpd --> |data|B2
+    dpd --> |data|BN[...]
+
+    AC(fa:fa-bell analyzer_confirmation)
+    style AC fill:lightgreen
+
+    AV(fa:fa-bell analyzer_violation)
+    style AV fill:red
+
+    B2 -->|calls| C(confirm)
+    C -->|triggers| AC
+
+    A2 -->|calls| AV
+    B1 -->|calls| AV
+```
+
+To integrate the parser into this the template generated the following stub implementations in `analyzer/zeek_*.spicy`:
+
+```spicy
+# TODO: Protocol analyzers should confirm once they are reasonably sure that
+# they are indeed parsing the right protocol. Pick a unit that's a little bit
+# into the parsing process here.
+#
+# on Foo::SUITABLE_UNIT::%done {
+#     zeek::confirm_protocol();
+# }
+
+# Any error bubbling up to the top unit will trigger a protocol rejection.
+on Foo::Request::%error {
+    zeek::reject_protocol("error while parsing Foo request");
+}
+
+on Foo::Response::%error {
+    zeek::reject_protocol("error while parsing Foo reply");
+}
+```
+
+`TODO`

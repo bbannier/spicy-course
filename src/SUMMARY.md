@@ -29,6 +29,8 @@
 - [TODO: Spicy patterns]()
 - [Integrating with Zeek](./zeek_integration.md)
   - [Protocol analyzers](./zeek_protocol_analyzers.md)
+    - [Message and connection semantics](./zeek_message_and_connection_semantics.md)
+    - [Analyzer lifecycle](./zeek_analyzer_lifecycle.md)
 - [Debugging and profiling]()
 
     TODO(bbannier): vielleicht gopher also example protokol?

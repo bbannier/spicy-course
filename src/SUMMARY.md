@@ -36,6 +36,4 @@
   - [Exercises](./zeek_protocol_analyzer_exercises.md)
 <!-- - [TODO: Debugging and profiling]() -->
 
-    <!-- TODO(bbannier): vielleicht gopher also example protokol? -->
-
     <!-- TODO(bbannier): type aliases -->

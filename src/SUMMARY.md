@@ -32,9 +32,10 @@
     - [Message and connection semantics](./zeek_message_and_connection_semantics.md)
     - [Analyzer lifecycle](./zeek_analyzer_lifecycle.md)
     - [Passing data to Zeek](./zeek_passing_data.md)
+    - [Forwarding to other analyzers](./zeek_forwarding_data.md)
   - [Exercises](./zeek_protocol_analyzer_exercises.md)
 <!-- - [TODO: Debugging and profiling]() -->
 
-    TODO(bbannier): vielleicht gopher also example protokol?
+    <!-- TODO(bbannier): vielleicht gopher also example protokol? -->
 
-    TODO(bbannier): type aliases
+    <!-- TODO(bbannier): type aliases -->

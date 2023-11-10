@@ -23,8 +23,8 @@
   - [Exercise: A naive CSV parser](./parsing_exercise_naive_csv.md)
   - [Adding additional parser state](./parser_additional_state.md)
   - [Lookahead parsing](./parsing_lookahead.md)
+  - [Error recovery](./error_recovery.md)
   <!-- - [TODO: Loosely coupled parsers: sinks & filters]() -->
-  <!-- - [TODO: Error recovery](./error_recovery.md) -->
   <!-- - [TODO: Hooks]() -->
 <!-- - [TODO: Spicy patterns]() -->
 - [Integrating with Zeek](./zeek_integration.md)

@@ -57,7 +57,33 @@ updated are marked `TODO`. It will generate e.g.,
       [Signatures](https://docs.zeek.org/en/master/frameworks/signatures.html) for
       dynamic protocol detection (DPD)
 - `testing/tests`: [BTest](https://github.com/zeek/btest#readme) test cases
+```
 
+```admonish info
+You can use `zkg` to install the package into your Zeek installation.
+
+~~~plain
+zkg install <package_dir>
+~~~
+
+To run its tests, e.g., during development:
+
+~~~plain
+zkg test <package_dir>
+~~~
+
+The generated project uses CMake for building and BTest for testing. You can
+build manually, e.g., during development. The test scaffolding assumes that the
+CMake build directory is named `build`.
+
+~~~sh
+# Building.
+mkdir build
+(cd build && cmake .. && make)
+
+# Testing.
+(cd testing && btest)
+~~~
 ```
 
 <details>

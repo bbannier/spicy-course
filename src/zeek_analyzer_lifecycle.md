@@ -56,3 +56,5 @@ on Foo::Response::%error {
     zeek::reject_protocol("error while parsing Foo reply");
 }
 ```
+
+TODO: reference to accept/reject docs

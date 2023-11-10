@@ -31,6 +31,8 @@
   - [Protocol analyzers](./zeek_protocol_analyzers.md)
     - [Message and connection semantics](./zeek_message_and_connection_semantics.md)
     - [Analyzer lifecycle](./zeek_analyzer_lifecycle.md)
+    - [Passing data to Zeek](./zeek_passing_data.md)
+    - [Exercises](./zeek_protocol_analyzer_exercises.md)
 - [Debugging and profiling]()
 
     TODO(bbannier): vielleicht gopher also example protokol?

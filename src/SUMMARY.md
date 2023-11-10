@@ -23,17 +23,17 @@
   - [Exercise: A naive CSV parser](./parsing_exercise_naive_csv.md)
   - [Adding additional parser state](./parser_additional_state.md)
   - [Lookahead parsing](./parsing_lookahead.md)
-  - [TODO: Loosely coupled parsers: sinks & filters]()
-  - [TODO: Error recovery](./error_recovery.md)
-  - [TODO: Hooks](./hooks.md)
-- [TODO: Spicy patterns]()
+  <!-- - [TODO: Loosely coupled parsers: sinks & filters]() -->
+  <!-- - [TODO: Error recovery](./error_recovery.md) -->
+  <!-- - [TODO: Hooks]() -->
+<!-- - [TODO: Spicy patterns]() -->
 - [Integrating with Zeek](./zeek_integration.md)
   - [Protocol analyzers](./zeek_protocol_analyzers.md)
     - [Message and connection semantics](./zeek_message_and_connection_semantics.md)
     - [Analyzer lifecycle](./zeek_analyzer_lifecycle.md)
     - [Passing data to Zeek](./zeek_passing_data.md)
-    - [Exercises](./zeek_protocol_analyzer_exercises.md)
-- [Debugging and profiling]()
+  - [Exercises](./zeek_protocol_analyzer_exercises.md)
+<!-- - [TODO: Debugging and profiling]() -->
 
     TODO(bbannier): vielleicht gopher also example protokol?
 

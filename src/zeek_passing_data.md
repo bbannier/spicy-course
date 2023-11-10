@@ -37,3 +37,6 @@ event Foo::request(c: connection, is_orig: bool, payload: string)
     info$request = payload;
     }
 ```
+
+Passing data to other Zeek analyzers (e.g., for analysing subprotocols and
+files) is handled in a later section.

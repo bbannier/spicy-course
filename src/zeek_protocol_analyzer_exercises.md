@@ -1,7 +1,7 @@
 # Exercise
 
 Starting from the default protocol analyzer template we want to (redundantly) pass the number of
-`bytes` for `Request` as well.
+`bytes` for `Request` to Zeek as well.
 
 1. In the EVT file pass the number of `bytes` in `self.payload`.
 

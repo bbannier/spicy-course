@@ -57,4 +57,8 @@ on Foo::Response::%error {
 }
 ```
 
-TODO: reference to accept/reject docs
+We
+[`zeek::confirm_protocol`](https://docs.zeek.org/en/master/devel/spicy/reference.html#spicy-confirm-protocol)
+and
+[`zeek::reject_protocol`](https://docs.zeek.org/en/master/devel/spicy/reference.html#spicy-reject-protocol)
+to signal Zeek.
